@@ -31,7 +31,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField()
     count = models.PositiveIntegerField(default=0)
-    category = TreeForeignKey('Category', on_delete=models.PROTECT, related_name='products')
+    category = TreeForeignKey('Category', on_delete=models.PROTECT, related_name='products', null=True, blank=True)
 
     def __str__(self):
         return self.title
